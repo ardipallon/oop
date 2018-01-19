@@ -22,6 +22,7 @@ class template
     public function __construct($file)
     {
         $this->file = $file;
+        $this->loadFile();
     }
     // template klassi meetodid
     // html vaade faili sisu lugemine
@@ -61,4 +62,7 @@ class template
             echo 'Ei suutnud lugeda faili '.$this->this.'<br />';
         }
     }
+
+    //$this->vars massiivi täiendamine väärtuste paaridega
+    // kujul 'malli elemendi nimi'=>'reaalne väärtus'
 }
