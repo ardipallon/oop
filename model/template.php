@@ -65,4 +65,5 @@ class template
 
     //$this->vars massiivi täiendamine väärtuste paaridega
     // kujul 'malli elemendi nimi'=>'reaalne väärtus'
+    function set($vars, $value)
 }
