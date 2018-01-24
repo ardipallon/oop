@@ -10,7 +10,18 @@ class http
 {
     //klassi muutujad
     var $vars = array(); // andmed mis jõuavad HHTP kaudu
-    var $server = array(); // serveriga seotud andmed
+    var $server = array();
+
+    /**
+     * http constructor.
+     */
+    public function __construct()
+    {
+        $this->init();
+        $this->initConst();
+    }
+
+    // serveriga seotud andmed
 
     // klassi muutujate väärtustega täitmine
     function init(){
@@ -18,5 +29,15 @@ class http
         $this->vars = array_merge($_GET, $_POST);
         // serveri andmed
         $this->server = $_SERVER;
+    }
+
+    // vajalike konstantide defineerimine
+    function initConst(){
+        $constNames = array('HTTP_HOST', 'SCRIPT_NAME');
+        foreach($constNames as $constName){
+            if(!defined($constName) and isset($this->server[$constName])){
+                define[$constName, $this->server[$constName]];
+            }
+        }
     }
 }
