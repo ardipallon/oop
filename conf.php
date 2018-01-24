@@ -14,3 +14,6 @@ define('CONTROL_DIR', 'controllers/');
 
 // nõuame vajalikke failide olemasolu
 require_once MODEL_DIR.'template.php'; // html vaade failide töötlus
+require_once MODEL_DIR.'http.php'; // HTTP töötlus klass
+// loome vajalikud objektid, mis on pidevalt töös
+$http = new http();
