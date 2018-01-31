@@ -36,8 +36,18 @@ class http
         $constNames = array('HTTP_HOST', 'SCRIPT_NAME');
         foreach($constNames as $constName){
             if(!defined($constName) and isset($this->server[$constName])){
-                define[$constName, $this->server[$constName]];
+                define($constName, $this->server[$constName]);
             }
+        }
+    }
+    // funktsioon, mis uurib $this->vars massiivi, ja kui
+    // antud massiivis on olemas element nimega $name,
+    // siis annab antud elemendi väärtuse
+    function get($name){
+        if(isset($this->vars[$name])){
+            return $this->vars[$name];
+        } else {
+            return false;
         }
     }
 }

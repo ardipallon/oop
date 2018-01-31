@@ -16,7 +16,7 @@ $mainTmpl->set('site_title', 'PV');
 $mainTmpl->set('user', 'Kasutaja');
 $mainTmpl->set('title', 'Pealkiri');
 $mainTmpl->set('lang_bar', 'Keeleriba');
-$mainTmpl->set('menu', 'Lehe menüü');
+require_once 'menu.php';
 $mainTmpl->set('content', 'Lehe sisu');
 // väljastame objekti sisu test kujul
 echo '<pre>';
@@ -27,3 +27,7 @@ echo $mainTmpl->parse();
 echo $mainTmpl->parse();
 // kontrollime $http objekti tööd
 echo HTTP_HOST.SCRIPT_NAME.'<br />';
+ECHO $http->baseLink.'<br />';
+$pairs = array('control'=>'login', 'user'=>'test');
+$link = $http->getLink($pairs);
+echo $link;

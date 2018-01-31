@@ -11,9 +11,13 @@
 define('MODEL_DIR', 'model/');
 define('VIEWS_DIR', 'views/');
 define('CONTROL_DIR', 'controllers/');
+define('LIB_DIR', 'lib/');
+
+require_once LIB_DIR.'utilis.php';
 
 // nõuame vajalikke failide olemasolu
 require_once MODEL_DIR.'template.php'; // html vaade failide töötlus
 require_once MODEL_DIR.'http.php'; // HTTP töötlus klass
+require_once MODEL_DIR.'linkobjekt.php';
 // loome vajalikud objektid, mis on pidevalt töös
 $http = new linkobjekt();

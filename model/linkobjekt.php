@@ -29,7 +29,7 @@ class linkobjekt extends http
         if($link != '') {
             $link = $link.$this->delim;
         }
-        $link = $link.$name.$this->eq.fixURL($value);
+        $link = $link.fixUrl($name).$this->eq.fixUrl($value);
         echo $link.'<br />';
     }
     function getLink($add = array()){
@@ -38,9 +38,9 @@ class linkobjekt extends http
             $this->addToLink($link, $name, $value);
         }
         if($link != ''){
-            $this->baseLink = $this->baseLink.'?'.$link;
+            $link = $this->baseLink.'?'.$link;
         } else {
-            $this->baseLink;
+            $link = $this->baseLink;
         }
         return $link;
     }
