@@ -30,7 +30,7 @@ class linkobjekt extends http
             $link = $link.$this->delim;
         }
         $link = $link.fixUrl($name).$this->eq.fixUrl($value);
-        echo $link.'<br />';
+//        echo $link.'<br />';
     }
     function getLink($add = array()){
         $link = '';

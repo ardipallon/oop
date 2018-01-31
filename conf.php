@@ -14,7 +14,7 @@ define('CONTROL_DIR', 'controllers/');
 define('LIB_DIR', 'lib/');
 
 // lisame vaikimisi kontrolleri faili nimi
-define('DEFAUL_CONTROL', 'default');
+define('DEFAULT_CONTROL', 'default');
 
 require_once LIB_DIR.'utilis.php';
 
