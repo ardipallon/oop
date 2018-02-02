@@ -26,7 +26,13 @@ $itemTmpl->set('link', $link);
 // lisame antud element menüüsse
 $menuItem = $itemTmpl->parse(); // string, mis sisaldab ühe nimekirja elemendi lingiga
 $menuTmpl->add('menu_items', $menuItem); // nüüd olemas paar 'menu_items'=>'<li>...</li>
+$itemTmpl->set('name', 'avaleht');
+$link = $http->getLink(array('control'=>'default'));
+$itemTmpl->set('link', $link);
+$menuTmpl->add('menu_items', $itemTmpl->parse());
+
 // ehitame valmis menüü
 $menu = $menuTmpl->parse();
 // lisame valmis menüü lehele
 $mainTmpl->set('menu', $menu);
+
