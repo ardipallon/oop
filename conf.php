@@ -22,5 +22,6 @@ require_once LIB_DIR.'utilis.php';
 require_once MODEL_DIR.'template.php'; // html vaade failide töötlus
 require_once MODEL_DIR.'http.php'; // HTTP töötlus klass
 require_once MODEL_DIR.'linkobjekt.php';
+require_once MODEL_DIR.'mysql.php';
 // loome vajalikud objektid, mis on pidevalt töös
 $http = new linkobjekt();
