@@ -28,11 +28,20 @@ class mysql
         $this->connect();
     }
 
-    function connect($host, $user, $pass, $dbname){
-        $this->conn = mysqli_connect($host, $user, $pass, $dbname);
+    function connect(){
+        $this->conn = mysqli_connect($this->host, $this->user, $this->pass, $this->dbname);
         if(!$this->conn){
             echo 'Probleem andmebaasi ühendusega<br />';
             exit;
         }
+    }
+    // Päringu saatmise funktsioon
+    function query($sql){
+        $result = mysqli_query($this->conn, $sql);
+        if(!$result){
+            echo 'Probleem päringuga '.$sql.'<br />';
+            return false;
+        }
+        return $result;
     }
 }
