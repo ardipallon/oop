@@ -8,6 +8,11 @@
 // loome menüü ehitamiseks vajalikud objektid
 $menuTmpl = new template('menu.menu'); // menüü mall
 $itemTmpl = new template('menu.item'); // menüü elemendi mall
+
+// koostame menüü ja sisu loomise päring
+$sql = 'SELECT content_id, content, title '.'FROM content WHERE parent_id='.fixDB(0).' AND show_in_menu='.fixDB(1);
+$result = $db->getData($sql);
+
 // loome üks menüü element nimega esimene
 $itemTmpl->set('name', 'esimene');
 // määrata menüüs väljastava elemendiga seotud link
