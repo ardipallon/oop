@@ -15,6 +15,7 @@ $result = $db->getData($sql);
 if($result != false){
     // Logime kasutajat sisse
     // ja avame temale sessiooni
+    $http->redirect();
 } else {
     // Probleem sisselogimisega
     // suuname tagasi sisselogimisvormile
