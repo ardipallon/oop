@@ -18,6 +18,11 @@ define('DEFAULT_CONTROL', 'default');
 
 require_once LIB_DIR.'utilis.php';
 
+// lisame rakenduse kasutatavate kasutajate rollid
+define('ROLE_NONE', 0);
+define('ROLE_USER', 1);
+define('ROLE_ADMIN', 2);
+
 // nõuame vajalikke failide olemasolu
 require_once MODEL_DIR.'template.php'; // html vaade failide töötlus
 require_once MODEL_DIR.'http.php'; // HTTP töötlus klass
