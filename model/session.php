@@ -51,4 +51,12 @@ class session
         // Paneme antud väärtus ka veebi andmete sisse
         $this->http->set('sid', $sid);
     }
+
+    // Sessiooni tabeli puhastamine vananenud sessioonidest
+    function clearSessions(){
+        $sql = 'DELETE FROM session WHERE '.
+            time().'- UNIX_TIMESTAMP(changed) > '.
+            $this->timeout;
+        $this->db->query($sql);
+    }
 }
