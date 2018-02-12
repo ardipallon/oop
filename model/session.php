@@ -15,6 +15,7 @@ class session
     var $db = false;
 
     var $timeout = 1800; // Sessiooni pikkus - 30 minutit
+    var $anonymous = true; // Kas on lubatud anonüümne kasutamine
     /**
      * session constructor.
      * @param bool $http
