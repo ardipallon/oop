@@ -32,3 +32,5 @@ require_once 'db_conf.php';
 // loome vajalikud objektid, mis on pidevalt töös
 $http = new linkobjekt();
 $db = new mysql(DB_HOST, DB_USER, DB_PASS, DB_NAME);
+
+
